@@ -12,7 +12,7 @@ class Auth:
         """
         if path is None or excluded_paths is None or excluded_paths == []:
             return True
-        
+
         # Allow wildcard matching for excluded_paths
         for excluded_path in excluded_paths:
             if excluded_path.endswith('*'):
