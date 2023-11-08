@@ -49,8 +49,8 @@ class BasicAuth(Auth):
             return None, None
         return tuple(decoded_base64_authorization_header.split(':', 1))
 
-    def user_object_from_credentials(self, user_email: str, user_pwd: str
-                                    ) -> TypeVar('User'):
+    def user_object_from_credentials(self, user_email: str, user_pwd: str) \
+            -> TypeVar('User'):
         """Returns the User instance based on email and password
         """
         if user_email is None or type(user_email) is not str:
@@ -64,7 +64,7 @@ class BasicAuth(Auth):
             return None
         if users is None or len(users) == 0:
             return None
-        
+
         for user in users:
             if user.is_valid_password(user_pwd):
                 return user
