@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """The auth module"""
 from typing import List, TypeVar
+from os import getenv
 
 
 class Auth:
@@ -41,4 +42,4 @@ class Auth:
         """
         if request is None:
             return None
-        return request.cookies.get('_my_session_id')
+        return request.cookies.get(getenv('SESSION_NAME'))
