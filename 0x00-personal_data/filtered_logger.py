@@ -22,10 +22,12 @@ class RedactingFormatter(logging.Formatter):
     SEPARATOR = ";"
 
     def __init__(self, fields: List[str] = None):
+        """Constructor method"""
         super(RedactingFormatter, self).__init__(self.FORMAT)
         self.fields = fields if fields else []
 
     def format(self, record: logging.LogRecord) -> str:
+        """Obfuscates the log message"""
         return filter_datum(self.fields, self.REDACTION,
                             super(RedactingFormatter, self).format(record),
                             self.SEPARATOR)
