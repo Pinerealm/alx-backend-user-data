@@ -19,7 +19,7 @@ def welcome() -> str:
 @app.route('/users', methods=['POST'], strict_slashes=False)
 def register_user() -> str:
     """POST /users
-    Data:
+    JSON body:
       - email: user email
       - password: user password
     Return:
