@@ -1,6 +1,9 @@
-*main.py
+main*.py
 __pycache__
 .DS_Store
 main_*?.py
 *.json
 user_data.csv
+main*.sql
+a.db
+!0x03-user_authentication_service/main.py
