@@ -2,6 +2,7 @@
 """The filtered_logger module"""
 import logging
 import mysql.connector
+from mysql.connector import connection
 import os
 import re
 from typing import List
@@ -51,7 +52,7 @@ def get_logger() -> logging.Logger:
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
     """Returns a connector to a database"""
-    return mysql.connector.connection.MySQLConnection(
+    return connection.MySQLConnection(
         user=os.getenv("PERSONAL_DATA_DB_USERNAME", "root"),
         password=os.getenv("PERSONAL_DATA_DB_PASSWORD", ""),
         host=os.getenv("PERSONAL_DATA_DB_HOST", "localhost"),
